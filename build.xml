@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="WebApp" default="autodeploy" basedir=".">
+
+	<property name="name" value="project" />
+	<property name="db.dir" value="db" />
+	<property name="src.dir" value="src" />
+	<property name="lib.dir" value="db/weblib" />
+	<property name="web-classes.dir" value="${name}/WEB-INF/classes" />
+	<property name="web-static.resources.dir" value="${name}/resources" />
+	<property name="web-apacheTiles.dir" value="${name}/WEB-INF/apacheTiles" />
+	<property name="web-lib.dir" value="${name}/WEB-INF/lib" />
+	<property name="web-metainf.dir" value="${name}/META-INF" />
+	<property name="web-spring.dir" value="${name}/WEB-INF/spring" />
+	<property name="web-web-inf.dir" value="${name}/WEB-INF" />
+
+	<property file="${src.dir}/main/resources/db.properties" />
+	<property file="${src.dir}/main/resources/tomcat.properties" />
+
+	<target name="usage" description="Описание возможных целей">
+		<echo message="" />
+		<echo message="Вы открыли Ant-файл сборки проекта WebApp" encoding="utf-8" />
+		<echo message="------------------------------------------------------" />
+		<echo message="" />
+		<echo message="Доступные цели:" encoding="utf-8" />
+		<echo message="" />
+		<echo message="setupDB   --> Инициализация базы данных" encoding="utf-8" />
+		<echo message="" />
+		<echo message="clean   --> Очистка проекта" encoding="utf-8" />
+		<echo message="" />
+		<echo message="build   --> Сборка проекта проекта" encoding="utf-8" />
+		<echo message="" />
+		<echo message="warfile --> Генерация war-файла" encoding="utf-8" />
+		<echo message="" />
+		<echo message="autodeploy --> Загрузка проекта на сервер Tomcat" encoding="utf-8" />
+	</target>
+
+	<!-- Цели инициализации БД  -->
+
+	<target name="setupSqlServerDB" if="useSqlServerDB" description="Установка свойств для БД MSSQLServer" >
+		<property name="db.driver" value="${sqlserver.driver}" />
+		<property name="db.url" value="${sqlserver.url}" />
+		<property name="db.user" value="${sqlserver.user}" />
+		<property name="db.password" value="${sqlserver.password}" />
+	</target>
+
+	<target name="setupHyperSQLDB" if="useHyperSQLDB" description="Установка свойств для БД HyperSQL">
+		<property name="db.driver" value="${hypersql.driver}" />
+		<property name="db.url" value="${hypersql.url}" />
+		<property name="db.user" value="${hypersql.user}" />
+		<property name="db.password" value="${hypersql.password}" />
+	</target>
+
+	<target name="setupDB" depends="setupSqlServerDB, setupHyperSQLDB" description="Инициализация БД">
+		<!-- присоедиенение другого ant-файла -->
+		<ant antfile="${db.dir}/initDB.xml" />
+	</target>
+
+	<path id="lib-classpath">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<!-- Цель - очистка проекта -->
+	<target name="clean" depends="usage">
+		<delete dir="${name}" />
+	</target>
+
+	<!-- Цель - построение проекта -->
+	<target name="build" depends="clean">
+
+		<mkdir dir="${web-metainf.dir}" />
+		<mkdir dir="${web-classes.dir}" />
+		<mkdir dir="${web-apacheTiles.dir}" />
+		<mkdir dir="${web-lib.dir}" />
+		<mkdir dir="${web-spring.dir}" />
+
+		<javac includeantruntime="false" 
+			   srcdir="${src.dir}/main/java" 
+			   destdir="${web-classes.dir}" 
+			   source="1.8"
+			   encoding="utf-8">
+			<classpath refid="lib-classpath" />
+		</javac>
+
+		<!-- Копирование статичных ресурсов -->
+		<copy todir="${web-static.resources.dir}">
+			<fileset dir="${src.dir}/main/webapp/resources">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+
+		<!-- Копирование конфигурационных файлов -->
+		<copy todir="${web-classes.dir}">
+			<fileset dir="${src.dir}/main/resources">
+				<include name="*.xml" />
+				<include name="*.properties" />
+			</fileset>
+		</copy>
+
+		<!-- Копирование папки apacheTiles с представлениями-->
+		<copy todir="${web-apacheTiles.dir}">
+			<fileset dir="${src.dir}/main/webapp/WEB-INF/apacheTiles">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+
+		<!-- Копирование библиотек-->
+		<copy todir="${web-lib.dir}">
+			<fileset dir="${lib.dir}">
+				<include name="*.jar" />
+			</fileset>
+		</copy>
+
+		<!-- Копирование spring-конфигурации -->
+		<copy todir="${web-spring.dir}">
+			<fileset dir="${src.dir}/main/webapp/WEB-INF/spring">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+
+		<!-- Копирование дескриптора развертывания и tiles.xml -->
+		<copy todir="${web-web-inf.dir}">
+			<fileset dir="${src.dir}/main/webapp/WEB-INF">
+				<include name="tiles.xml" />
+				<include name="web.xml" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- Цель - создание war-файла -->
+	<target name="warfile" depends="build">
+		<war warfile="${name}.war" basedir="${name}" webxml="${name}/WEB-INF/web.xml">
+			<include name="**/*" />
+		</war>
+	</target>
+	
+	<!-- Цель - автодеплой на сервер -->
+	<target name="autodeploy" depends="warfile">	
+		<copy todir="${deploy.path}">
+			<fileset dir=".">
+				<include name="${name}.war" />
+			</fileset>
+		</copy>
+	</target>
+
+</project>

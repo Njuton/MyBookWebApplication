@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="setupDB" default="all" basedir=".">
+	
+	<!-- MSSQL Server -->
+	
+	<!-- Удаление таблиц -->
+	<target name="dropSqlServerTables" description="Удаление таблиц из БД" if="useSqlServerDB">
+		<echo message="Удаление таблиц, используя: ${db.driver} ${db.url}" />
+		<sql driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.password}" onerror="continue" encoding="utf-8">
+			<classpath>
+				<fileset dir="${lib.dir}">
+					<include name="mssql-jdbc-6.1.0.jre8.jar" />
+				</fileset>
+			</classpath>
+			<transaction src="${db.dir}/SQLServer/dropTables.sql" />
+		</sql>
+	</target>
+
+	<!-- Создание таблиц -->
+	<target name="createSqlServerTables" description="Создание таблиц в БД" if="useSqlServerDB"> 
+		<echo message="Создание таблиц, используя: ${db.driver} ${db.url}" />
+		<sql driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.password}" encoding="utf-8">
+			<classpath>
+				<fileset dir="${lib.dir}">
+					<include name="mssql-jdbc-6.1.0.jre8.jar" />
+				</fileset>
+			</classpath>
+			<transaction src="${db.dir}/SQLServer/createTables.sql" />
+		</sql>
+	</target>
+
+	<!-- Заполнение таблиц данными -->
+	<target name="populateSqlServerTables" description="Заполнение таблиц данными" if="useSqlServerDB">
+		<echo message="Заполнение таблиц данными, используя: ${db.driver} ${db.url}" />
+		<sql driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.password}" encoding="utf-8">
+			<classpath>
+				<fileset dir="${lib.dir}">
+					<include name="mssql-jdbc-6.1.0.jre8.jar" />
+				</fileset>
+			</classpath>
+			<transaction src="${db.dir}/SQLServer/populateDB.sql" />
+		</sql>
+	</target>
+	
+	<!-- HyperSQL -->
+	
+		<!-- Удаление таблиц -->
+		<target name="dropHyperSQLTables" description="Удаление таблиц из БД" if="useHyperSQLDB">
+			<echo message="Удаление таблиц, используя: ${db.driver} ${db.url}" />
+			<sql driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.password}" onerror="continue" encoding="utf-8">
+				<classpath>
+					<fileset dir="${lib.dir}">
+						<include name="hsqldb-2.4.0.jar" />
+					</fileset>
+				</classpath>
+				<transaction src="${db.dir}/HyperSQL/dropTables.sql" />
+			</sql>
+		</target>
+	
+		<!-- Создание таблиц -->
+		<target name="createHyperSQLTables" description="Создание таблиц в БД" if="useHyperSQLDB">
+			<echo message="Создание таблиц, используя: ${db.driver} ${db.url}" />
+			<sql driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.password}" encoding="utf-8">
+				<classpath>
+					<fileset dir="${lib.dir}">
+						<include name="hsqldb-2.4.0.jar" />
+					</fileset>
+				</classpath>
+				<transaction src="${db.dir}/HyperSQL/createTables.sql" />
+			</sql>
+		</target>
+	
+		<!-- Заполнение таблиц данными -->
+		<target name="populateHyperSQLTables" description="Заполнение таблиц данными" if="useHyperSQLDB">
+			<echo message="Заполнение таблиц данными, используя: ${db.driver} ${db.url}" />
+			<sql driver="${db.driver}" url="${db.url}" userid="${db.user}" password="${db.password}" encoding="utf-8">
+				<classpath>
+					<fileset dir="${lib.dir}">
+						<include name="hsqldb-2.4.0.jar" />
+					</fileset>
+				</classpath>
+				<transaction src="${db.dir}/HyperSQL/populateDB.sql" />
+			</sql>
+		</target>
+	
+	
+	<target name="all"
+			depends="dropSqlServerTables,
+					 createSqlServerTables, createHyperSQLTables,
+					 populateSqlServerTables, populateHyperSQLTables" 
+			description="Запуск всех целей" />
+
+</project>

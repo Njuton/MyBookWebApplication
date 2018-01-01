@@ -1,0 +1,110 @@
+	/*CSS-стили для меню*/
+	
+
+		header{
+ 		margin-top: 200px;
+ 		font-family: Cuprum, Arial, Helvetica, sans-serif;
+	}
+
+	/*убираем все отступы в пунктах меню, оно становится горизонтальным*/
+
+		.draw-menu *{
+ 		margin: 0;
+ 		padding: 0;
+	}
+
+	/* убираем маркеры */
+		
+		.draw-menu ul,.draw-menu ol{
+ 		list-style: none;
+	}
+
+	/*делаем меню горизонтальным, элементы выстраиваются в ряд*/
+		
+		.draw-menu > ul{
+ 		display: flex;
+ 		justify-content: center;
+	}
+
+	/*ставим справа черту границы*/
+	
+		.draw-menu > ul li{
+ 		position: relative;
+ 		border-right: 1px solid #c7c8ca;
+	}
+
+	/*ставим слева черту границы*/
+
+		.draw-menu > ul li:first-child{
+ 		border-left: 1px solid #b2b3b5;
+	}
+
+		.draw-menu > ul li:last-child{
+ 		border-right: 1px solid #babbbd;
+	}
+
+		.draw-menu > ul li > a i.fa{
+ 		position: absolute;
+ 		top: 15px;
+ 		left: 12px;
+ 		font-size: 18px;
+	}
+
+	/*задаем цвет фона пунктов меню и их размер*/
+		.draw-menu > ul li a{
+ 		display: block;
+ 	
+ 	/* устанавливаем градиент для  элемента */
+ 	
+ 		background: -moz-linear-gradient(top,  rgba(201,201,201,1) 0%, rgba(246,246,246,1) 2%, rgba(196,197,199,1) 98%, rgba(117,117,119,1) 100%); /* FF3.6-15 */
+ 		background: -webkit-linear-gradient(top,  rgba(201,201,201,1) 0%,rgba(246,246,246,1) 2%,rgba(196,197,199,1) 98%,rgba(117,117,119,1) 100%); /* Chrome10-25,Safari5.1-6 */
+ 		background: linear-gradient(to bottom,  rgba(201,201,201,1) 0%,rgba(246,246,246,1) 2%,rgba(196,197,199,1) 98%,rgba(117,117,119,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+ 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9c9c9', endColorstr='#757577',GradientType=0 ); /* IE6-9 */
+
+ 		padding: 15px 30px 15px 40px;
+ 		font-size: 14px;
+ 		color: #454547;
+ 		text-decoration: none;      /*убираем подчеркивание ссылок*/
+ 		text-transform:uppercase;
+ 		transition: all 0.3s ease;    /*задаем время восстановления вида элемента после псевдокласса hover*/
+	}
+
+	/*меня цвет фона по наведению указателя мыши на ссылку*/
+
+		.draw-menu li a:hover{
+ 		background: -moz-linear-gradient(top,  rgba(224,225,229,1) 0%, rgba(69,69,71,1) 2%, rgba(69,69,71,1) 98%, rgba(224,225,229,1) 100%); /* FF3.6-15 */
+ 		background: -webkit-linear-gradient(top,  rgba(224,225,229,1) 0%,rgba(69,69,71,1) 2%,rgba(69,69,71,1) 98%,rgba(224,225,229,1) 100%); /* Chrome10-25,Safari5.1-6 */
+ 		background: linear-gradient(to bottom,  rgba(224,225,229,1) 0%,rgba(69,69,71,1) 2%,rgba(69,69,71,1) 98%,rgba(224,225,229,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+ 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e1e5', endColorstr='#e0e1e5',GradientType=0 ); /* IE6-9 */
+ 		color: #ffffff;
+ 		box-shadow: 1px 5px 10px -5px black;
+ 		transition: all 0.3s ease;
+	}
+
+	/*позиционируем подменю*/
+
+		.draw-menu li ul{
+ 		position: absolute;
+ 		min-width: 150px;
+ 		display: none;
+	}
+
+	/*рамка для элементов подменю*/
+	
+		.draw-menu li > ul li{
+ 		border: 1px solid #c7c8ca;
+	}
+
+	/*устанавливает форматирование пункта подменю*/
+		
+		.draw-menu li > ul li a{
+ 		padding: 10px;
+ 		text-transform: none;
+ 		background: #e4e4e5;
+	}
+
+	/* отображаем подменю по наведению мыши*/
+
+		.draw-menu li:hover > ul{
+ 		display: block;
+	}

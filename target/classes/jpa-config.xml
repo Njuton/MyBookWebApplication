@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+	<!-- Файл конфигурирования JPA/Hibernate -->
+
+	<!-- Позволяет считывать свойства из файла и обращаться к ним как ${имя_Свойства} -->
+	<context:property-placeholder location="classpath:db.properties" />
+	
+	<!-- Использование MS SQL Server -->
+
+<!-- 	<bean id="dataSource" -->
+<!-- 		class="org.springframework.jdbc.datasource.DriverManagerDataSource"> -->
+<!-- 		<property name="driverClassName" value="${sqlserver.driver}" /> -->
+<!-- 		<property name="url" value="${sqlserver.url}" /> -->
+<!-- 		<property name="username" value="${sqlserver.user}" /> -->
+<!-- 		<property name="password" value="${sqlserver.password}" /> -->
+<!-- 	</bean> -->
+
+	<!-- Использование HyperSQL Server -->
+	
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${hypersql.driver}" />
+		<property name="url" value="${hypersql.url}" />
+		<property name="username" value="${hypersql.user}" />
+		<property name="password" value="${hypersql.password}" />
+	</bean>
+
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+
+		<!-- Объявляем пакеты, где необходимо искать сущности -->
+		<property name="packagesToScan">
+			<array>
+				<value>com.mycompany.db</value>
+			</array>
+		</property>
+		<property name="dataSource" ref="dataSource" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<property name="generateDdl" value="true" />
+			</bean>
+		</property>
+		<property name="jpaProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+				<prop key="hibernate.use_nationalized_character_data">${hibernate.use_nationalized_character_data}</prop>
+				
+
+<!-- Этот параметр необходим для того, чтобы дать возможность сделать merge объекта в случае, если у него есть атрибут,
+в который входят 2 detach равных объекта, полученных из разных сессий, к которым также по cascade нужно применить merge. -->
+
+				<prop key="hibernate.event.merge.entity_copy_observer">allow</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- Подключение аннотации @Transactional -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+
+	<!-- Регистрация TransactionManager -->
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+
+</beans>
