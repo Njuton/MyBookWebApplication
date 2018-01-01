@@ -53,14 +53,14 @@ Java SE Development Kit 8
 2. **Клонируйте репозиторий**
 
     ```
-    $ git clone https://github.com/jquery/jquery.git c:\webapp
+    $ git clone https://github.com/Njuton/MySiteWebApplication.git c:\webapp
     ```
   
 3. **Настройте и запустите сервер баз данных (HyperSQL или MS SQL Server)**
 
     По умолчанию в приложении используется сервер HyperSQL. Поэтому его необходимо просто запустить:
     ```
-    $ cd c:\webapp
+    $ cd c:\webapp\db\HyperSQL
     $ runServer.bat
     ```
     Если Вы используете Microsoft SQL Server: 
@@ -98,7 +98,7 @@ Java SE Development Kit 8
          + В файле src/main/resources/tomcat.properties свойству deploy.path присвойте значение с местонахождением папки webapps сервера Tomcat и запустите сервер
              ```
              $ cd c:\apache-tomcat-8.5.24\bin
-             $ runServer.but
+             $ startup.but
              ```
          + Выполните цель autodeploy в ant-скрипте build.xml
               ```
