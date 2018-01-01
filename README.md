@@ -1,6 +1,6 @@
 **Веб-приложение учета данных о клиентах, книгах и заказах на них для книжного интернет-магазина.**
 
-**Стэк технологий:** Java 8, Spring Core, Spring MVC, JPA/Hibernate, HyperSQL, MS SQL Server, Tomcat, JSTL, JSP, Apache Tiles, Ant, Maven.
+**Стэк технологий:** Java 8, Spring Core, Spring MVC, JPA/Hibernate, HyperSQL, MS SQL Server, Tomcat, JSTL, JSP, Apache Tiles, Ant, Maven, HTML, CSS.
 
 ![Alt text](https://github.com/Njuton/MySiteWebApplication/blob/master/img/anim.gif "Optional title")
 
