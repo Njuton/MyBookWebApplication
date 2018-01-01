@@ -1,0 +1,675 @@
+	/* Общие стили для всех страниц */
+	
+	#container {
+  		width: 800px;       
+  		margin-right: auto; 
+  		margin-left: auto;  
+		background-color: white;
+		border: 1px solid black;
+ 	}
+ 		
+ 	#content {
+		min-height: 400px;
+	}
+		
+	
+	p.footer_copyright {
+			text-align: center;
+		}
+	
+	div.head_logo {
+			text-align: left;
+			float:left;
+			margin-right: 25px;
+			margin-top: 12px;
+			margin-left: 20px;
+ 		}
+ 		
+ 	div.head_find_button {
+ 		float: left;
+ 		margin-top: 30px;
+ 	}
+ 	
+ 	div.head_find_input {
+ 		float: left;
+ 		margin-top: 30px;
+		margin-right: 10px;
+ 	}
+		
+	button.head_find_button {
+		height: 25px;
+		width: 60px;
+	}
+	
+	input.head_find_input {
+		background-image: url(../img/loopa.png);
+		background-repeat: no-repeat;
+		background-position: 215px;
+		height: 25px;
+		font-size: 12px;
+	}	
+	
+	/* Общие стили таблиц */ 
+	
+	table {
+		margin: auto;
+		font-size: 16px;
+		width: 90%;
+	}
+	
+	caption {
+		text-align:center; 
+		font-size: 14pt; 
+		font-weight: bold; 
+		margin-bottom: 10px;
+	}
+
+	table td, table th{
+   	 	padding: 8px;
+   	 	text-align: left;
+	}  
+	
+	.err {
+		color: red;
+	}
+	
+	/* bookFind */
+	
+	.bookFind th {
+		background-color: #9EF89E;
+   		box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+    	border-top: none;
+    	text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+	}
+	
+	.bookFind .col1 { 
+		width: 30%;
+	}
+	
+	.bookFind .col2 {
+		width: 40%;
+	}
+	
+	.bookFind .col3 {
+		width: 30%;
+	}
+	
+	.bookFind input {
+		width: 100%;
+	}
+	
+	.bookFind select {
+		width: 100%;
+	}
+
+	.bookFind input[type="submit"] {
+		width: 100%;
+	}
+
+	.bookFind input[type="reset"] {
+		width: 75%;
+	}
+	
+	/* books */
+	
+	.books {
+    	border: solid #ccc 1px;
+    	box-shadow: 0 1px 1px #ccc;         
+	}
+ 
+	.books tr:hover {
+    	background: #FFE4B5;
+    	transition: all 0.1s ease-in-out;     
+	}    
+ 
+	.books td, .books th {
+    	border-left: 1px solid #ccc;
+    	border-top: 1px solid #ccc;
+    	padding: 10px;
+    	text-align: left;    
+	}
+ 
+	.books th {
+	    background-color: #9EF89E;
+    	box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+    	border-top: none;
+    	text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+	}
+ 
+	.books td:first-child, .books th:first-child {
+    	border-left: none;
+	}
+	
+	/* bookInfo */
+	
+	.bookInfo th {
+		background-color: #9EF89E;
+   		box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+    	border-top: none;
+    	text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+	}
+	
+	.bookInfo button[type="submit"]{
+		width: 100%;
+	}
+
+	.bookInfo button[name="remove"]{
+		width: 75%;
+	}
+
+	.bookInfo button[name="addToTrash"]{
+		width: 100%;
+	}
+	
+	.bookInfo .col1{
+		width: 30%;	
+	}
+	
+	.bookInfo .col2{
+		width: 40%;	
+	}
+	
+	.bookInfo .col3{
+		width: 30%;	
+	}
+	
+	/* bookEdit */
+	
+	.bookEdit th {
+		background-color: #9EF89E;
+   		box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+    	border-top: none;
+    	text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+	}
+	
+	.bookEdit .col1 { 
+		width: 30%;
+	}
+	
+	.bookEdit .col2 {
+		width: 2%;
+	}
+	
+	.bookEdit .col3 {
+		width: 38%;
+	}
+	
+	.bookEdit .col4 {
+		width: 30%;
+	}
+	
+	.bookEdit input {
+		width: 100%;
+	}
+	
+	.bookEdit select {
+		width: 100%;
+	}
+
+	.bookEdit input[type="submit"] {
+		width: 100%;
+	}
+	
+	.bookEdit input[type="reset"] {
+		width: 75%;
+	}
+	
+	/* clients */
+	
+	.clients {
+    	border: solid #ccc 1px;
+    	box-shadow: 0 1px 1px #ccc;         
+	}
+ 
+	.clients tr:hover {
+    	background: #FFE4B5;
+    	transition: all 0.1s ease-in-out;     
+	}    
+ 
+	.clients td, .clients th {
+    	border-left: 1px solid #ccc;
+    	border-top: 1px solid #ccc;
+    	padding: 10px;
+    	text-align: left;    
+	}
+ 
+	.clients th {
+	    background-color: #A7C8F8;
+    	box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+    	border-top: none;
+    	text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+	}
+ 
+	.clients td:first-child, .books th:first-child {
+    	border-left: none;
+	}
+	
+	/* clientInfo */
+	
+	.clientInfo th {
+		background-color: #A7C8F8;
+   		box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+    	border-top: none;
+    	text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+	}
+	
+	.clientInfo .col1{
+		width: 30%;
+	}
+
+	.clientInfo .col2{
+		width: 70%;
+	}
+	
+	.clientInfo .buttonEdit{
+		width: 100%;
+	}
+	
+	.clientInfo .buttonDelete{
+		width: 42%;
+	}
+	
+	/* clientEdit */
+	
+	.clientEdit th {
+		background-color: #A7C8F8;
+   		box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+    	border-top: none;
+    	text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+	}
+	
+	.clientEdit .col1 { 
+		width: 30%;
+	}
+	
+	.clientEdit .col2 {
+		width: 2%;
+	}
+	
+	.clientEdit .col3 {
+		width: 38%;
+	}
+	
+	.clientEdit .col4 {
+		width: 30%;
+	}
+	
+	.clientEdit input {
+		width: 100%;
+	}
+	
+	.clientEdit select {
+		width: 100%;
+	}
+	
+	.clientEdit input[type="submit"]{
+		width: 100%;
+	}
+	
+	/* orders */
+	
+	.orders {
+    	border: solid #ccc 1px;
+    	box-shadow: 0 1px 1px #ccc;         
+	}
+ 
+	.orders tr:hover {
+    	background: #FFE4B5;
+    	transition: all 0.1s ease-in-out;     
+	}    
+ 
+	.orders td, .clients th {
+    	border-left: 1px solid #ccc;
+    	border-top: 1px solid #ccc;
+    	padding: 10px;
+    	text-align: left;    
+	}
+ 
+	.orders th {
+	    background-color: #FBCAF8;
+    	box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+    	border-top: none;
+    	text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+	}
+ 
+	.orders td:first-child, .books th:first-child {
+    	border-left: none;
+	}
+	
+	/* orderInfo - таблица "Информация о заказе" */
+	
+	.orderInfoFirstTable th {
+		background-color: #FBCAF8;
+   		box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+    	border-top: none;
+    	text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+	}
+	
+	.orderInfoFirstTable .col1 {
+		width: 30%;
+	}
+	
+	.orderInfoFirstTable .col2 {
+		width: 70%;
+	}
+	
+	/* orderInfo - таблица "Заказанные товары" */
+	
+	.orderInfoSecondTable th {
+	    background-color: #FBCAF8;
+    	box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+    	border-top: none;
+    	text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+	}
+	
+	.orderInfoSecondTable .col1 {
+		width: 60%;	
+	}
+	
+	.orderInfoSecondTable .col2 {
+		width: 2%;	
+	}
+	
+	.orderInfoSecondTable .col3 {
+		width: 38%;	
+	}
+
+	.orderInfoSecondTable {
+    	border: solid #ccc 1px;
+    	box-shadow: 0 1px 1px #ccc;         
+	}  
+ 
+	.orderInfoSecondTable td, .clients th {
+    	border-left: 1px solid #ccc;
+    	border-top: 1px solid #ccc;
+    	padding: 10px;
+    	text-align: left;    
+	}
+ 
+	.orderInfoSecondTable td:first-child, .books th:first-child {
+    	border-left: none;
+	}
+	
+	/* orderInfo - таблца с кнопками*/
+	
+	.orderInfoThirdTable .col1{
+		width: 60%;
+	}
+	
+	.orderInfoThirdTable .col2{
+		width: 2%;
+	}
+	
+	.orderInfoThirdTable .col3{
+		width: 38%;
+	}
+	
+	.orderInfoThirdTable .editButton{
+		width: 50%;
+	}
+	
+	.orderInfoThirdTable .deleteButton{
+		width: 79%;
+	}
+	
+	/* orderEdit - таблица "Информация о заказе", если статус заказа != PROCESSING */
+	
+	.orderEditNotProcessingFirst th {
+		background-color: #FBCAF8;
+   		box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+    	border-top: none;
+    	text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+	}
+	
+	.orderEditNotProcessingFirst .col1 {
+		width: 30%;
+	}
+	
+	.orderEditNotProcessingFirst .col2 {
+		width: 70%;
+	}
+	
+	.orderEditNotProcessingFirst select {
+		width: 41%;
+	}
+	
+	/* orderEdit - таблица "Заказанные товары", если статус заказа != PROCESSING */
+	
+	.orderEditNotProcessingSecond .col1{
+		width: 50%;
+	}
+	
+	.orderEditNotProcessingSecond .col2{
+		width: 50%;
+	}
+
+	.orderEditNotProcessingSecond {
+    	border: solid #ccc 1px;
+    	box-shadow: 0 1px 1px #ccc;         
+	}  
+ 
+	.orderEditNotProcessingSecond td, .orderEditNotPricessingSecond th {
+    	border-left: 1px solid #ccc;
+    	border-top: 1px solid #ccc;
+    	padding: 10px;
+    	text-align: left;    
+	}
+	
+	.orderEditNotProcessingSecond th {
+	    background-color: #FBCAF8;
+    	box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+    	border-top: none;
+    	text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+	}
+ 
+	.orderEditNotProcessingSecond td:first-child, .orderEditNotPricessingSecond th:first-child{
+    	border-left: none;
+	}
+	
+	.orderEditNotProcessingButtonSubmit{
+		margin-left: 40px;
+		margin-top: 20px;
+	}
+	
+	/* orderEdit - таблица "Информация о заказе", если статус заказа == PROCESSING */
+	
+	.orderEditProcessingFirst th {
+		background-color: #FBCAF8;
+   		box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+    	border-top: none;
+    	text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+	}
+	
+	.orderEditProcessingFirst .col1 {
+		width: 30%;
+	}
+	
+	.orderEditProcessingFirst .col2 {
+		width: 40%;
+	}
+	
+	.orderEditProcessingFirst .col3 {
+		width: 30%;
+	}
+	
+	.orderEditProcessingFirst select, .orderEditProcessingFirst input{
+		width: 100%;
+	}
+	
+	/* orderEdit - таблица "Заказанные товары", если статус заказа == PROCESSING */
+	
+	.orderEditProcessingSecond {
+		width: 80%; 
+		float: left; 
+		margin-left: 40px;
+	}
+	
+	.orderEditProcessingSecond .col1{
+		width: 55%; 
+	}
+	
+	.orderEditProcessingSecond .col2{
+		width: 15%; 
+	}
+	
+	.orderEditProcessingSecond .col3{
+		width: 30%; 
+	}
+	
+	.orderEditProcessingSecond th, .orderEditProcessingSecond td{
+    	padding: 10px;
+    	text-align: left;    
+	} 
+	
+	/* orderEdit - таблица с кнопочками "удалить" (обслуживаются другой от предыдущей таблицы формой) */
+	
+	.orderEditProcessingThird {
+		width: 15%; 	
+		float: left; 
+		margin-top: 64px;
+	}
+	
+	.orderEditProcessingThird th, .orderEditProcessingThird td{
+    	padding: 8px;
+    	text-align: left;    
+	} 
+	
+	.orderEditProcessingThird button{
+		width: 100%;
+	}
+	
+	/* orderAdd - таблица "Информация о заказе" */
+	
+	.orderAddFirstTable th {
+		background-color: #FBCAF8;
+   		box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+    	border-top: none;
+    	text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+	}
+	
+	.orderAddFirstTable .col1 {
+		width: 30%;
+	}
+	
+	.orderAddFirstTable .col2 {
+		width: 2%;
+	}
+	
+	.orderAddFirstTable .col3 {
+		width: 38%;
+	}
+	
+	.orderAddFirstTable .col4 {
+		width: 30%;
+	}
+	
+	.orderAddFirstTable select, .orderAddFirstTable input {
+		width: 100%;
+	}
+	
+	/* orderAdd - таблица "Товары в заказах" */
+	
+	.orderAddSecondTable th {
+		background-color: #FBCAF8;
+   		box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+    	border-top: none;
+    	text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+	}
+	
+	.orderAddSecondTable .col1{
+		width: 60%;
+	}
+	
+	.orderAddSecondTable .col2{
+		width: 5%;
+	}
+	
+	.orderAddSecondTable .col3{
+		width: 35%;
+	}
+	
+	.orderAddSecondTable button[type="submit"]{
+		width: 50%;
+	}
+	
+	.orderAddSecondTable button[type="reset"]{
+		width: 87%;
+	}
+	
+	/* Для работы с корзиной */
+	
+	.trash {
+		border: solid black 1px;
+    	box-shadow: 0 1px 1px #ccc;    
+	}
+	
+	.trash tr:last-child td{
+		border-top: solid black 1px;
+	}
+	
+	.trash tr:last-child td:first-child{
+		border-right: solid black 1px;
+	}
+	
+	.trash th {
+		background-color: #F9F57D;
+   		box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+    	border-top: none;
+    	text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+	}
+	
+	.trash .col1 {
+		width: 30%;
+	}
+	
+	.trash .col2 {
+		width: 30%;
+	}
+	.trash .col3 {
+		width: 10%;
+	}
+	.trash .col4 {
+		width: 10%;
+	}
+	.trash .col5 {
+		width: 10%;
+	}
+	
+	div.trashSaveButton{
+		float: left;
+		margin-left: 50px;
+		margin-top: 25px;
+	}
+	
+	div.trashClearButton{
+		float: left;
+		margin-left: 200px;
+		margin-top: 25px;
+	}
+	
+	/* Стили страницы welcome */
+	
+	.welcome_font1{
+		font-weight: bold; 
+		text-decoration: underline;
+		margin-left: 25px;
+	}
+	
+	.welcome_font12{
+		font-weight: bold; 
+		margin-left: 25px;
+	}
+	
+	.welcome_font2{
+		color: red; 
+		font-weight: bold;
+	}
+	
+	.welcome_font3{
+		color: red;
+		font-style: italic;
+	}
+	
+	.welcome_li li{
+		margin: 10px;
+	}

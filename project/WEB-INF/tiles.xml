@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+ <!-- Файл конфигурирования представлений в ApacheTiles -->
+      
+<tiles-definitions>
+
+	<definition name="welcome" template="/WEB-INF/apacheTiles/layout/template.jsp">
+		<put-attribute name="header" value="/WEB-INF/apacheTiles/main_jsp/header.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/apacheTiles/main_jsp/menu.jsp" />
+		<put-attribute name="content" value="/WEB-INF/apacheTiles/content/welcome.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/apacheTiles/main_jsp/footer.jsp" />
+	</definition>
+	
+	<definition name="bookFind" extends="welcome">
+		<put-attribute name="content" value="/WEB-INF/apacheTiles/content/bookFind.jsp" />
+	</definition>
+	
+	<definition name="books" extends="welcome">
+		<put-attribute name="content" value="/WEB-INF/apacheTiles/content/books.jsp" />
+	</definition>
+	
+	<definition name="bookInfo" extends="welcome">
+		<put-attribute name="content" value="/WEB-INF/apacheTiles/content/bookInfo.jsp" />
+	</definition>
+	
+	<definition name="bookEdit" extends="welcome">
+		<put-attribute name="content" value="/WEB-INF/apacheTiles/content/bookEdit.jsp" />
+	</definition>
+	
+	<definition name="clients" extends="welcome">
+		<put-attribute name="content" value="/WEB-INF/apacheTiles/content/clients.jsp" />
+	</definition>
+	
+	<definition name="clientInfo" extends="welcome">
+		<put-attribute name="content" value="/WEB-INF/apacheTiles/content/clientInfo.jsp" />
+	</definition>
+	
+	<definition name="clientEdit" extends="welcome">
+		<put-attribute name="content" value="/WEB-INF/apacheTiles/content/clientEdit.jsp" />
+	</definition>
+	
+	<definition name="orders" extends="welcome">
+		<put-attribute name="content" value="/WEB-INF/apacheTiles/content/orders.jsp" />
+	</definition>
+	
+	<definition name="orderInfo" extends="welcome">
+		<put-attribute name="content" value="/WEB-INF/apacheTiles/content/orderInfo.jsp" />
+	</definition>
+	
+	<definition name="orderEdit" extends="welcome">
+		<put-attribute name="content" value="/WEB-INF/apacheTiles/content/orderEdit.jsp" />
+	</definition>
+	
+	<definition name="orderAdd" extends="welcome">
+		<put-attribute name="content" value="/WEB-INF/apacheTiles/content/orderAdd.jsp" />
+	</definition>
+	
+	<definition name="trash" extends="welcome">
+		<put-attribute name="content" value="/WEB-INF/apacheTiles/content/trash.jsp" />
+	</definition>
+	
+	<definition name="help" extends="welcome">
+		<put-attribute name="content" value="/WEB-INF/apacheTiles/content/help.jsp" />
+	</definition>
+	
+</tiles-definitions>
