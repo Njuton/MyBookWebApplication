@@ -62,7 +62,7 @@ Java SE Development Kit 8
 2. **Клонируйте репозиторий**
 
     ```
-    $ git clone https://github.com/Njuton/MySiteWebApplication.git c:\webapp
+    $ git clone https://github.com/Njuton/MyBookWebApplication.git c:\webapp
     ```
   
 3. **Настройте и запустите сервер баз данных (HyperSQL или MS SQL Server)**
