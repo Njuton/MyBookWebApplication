@@ -2,6 +2,8 @@
 
 **Стэк технологий:** Java 8, Spring Core, Spring MVC, Spring Security, JPA/Hibernate, HyperSQL, MS SQL Server, Apache Tomcat 8.5, JSTL, JSP, Apache Tiles, Apache Ant, Apache Maven, HTML, CSS.
 
+**Проверено в браузерах:** Chrome, Mozilla Firefox.
+
 ![Alt text](https://github.com/Njuton/MySiteWebApplication/blob/master/img/anim.gif "Optional title")
 
 
