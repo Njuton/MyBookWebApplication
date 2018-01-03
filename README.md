@@ -1,6 +1,6 @@
 **Веб-приложение учета данных о клиентах, книгах и заказах на них для книжного интернет-магазина.**
 
-**Стэк технологий:** Java 8, Spring Core, Spring MVC, JPA/Hibernate, HyperSQL, MS SQL Server, Apache Tomcat 8.5, JSTL, JSP, Apache Tiles, Apache Ant, Apache Maven, HTML, CSS.
+**Стэк технологий:** Java 8, Spring Core, Spring MVC, Spring Security, JPA/Hibernate, HyperSQL, MS SQL Server, Apache Tomcat 8.5, JSTL, JSP, Apache Tiles, Apache Ant, Apache Maven, HTML, CSS.
 
 ![Alt text](https://github.com/Njuton/MySiteWebApplication/blob/master/img/anim.gif "Optional title")
 
@@ -33,6 +33,12 @@
 **Корзина**
     
    Добавление товаров в корзину, очистка корзины.
+
+**Безопасноть**
+    
+   Поддержка аутентификации (вход), авторизации (разделения по ролям), регистрации (форма регистрации) пользователей.</br></br>
+   Изначально есть 3 роли: ANONIMOUS (только просмотр страниц), ROLE_USER (+поддержка оформления заказов), ROLE_ADMIN (полная поддержка возможностей).
+   Уже зарегистрированные пользователи (логин/пароль): user/user (права ROLE_USER), admin/admin (права ROLE_ADMIN).
 
 ### Требования
 ------------
