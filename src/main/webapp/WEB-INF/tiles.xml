@@ -66,4 +66,16 @@
 		<put-attribute name="content" value="/WEB-INF/apacheTiles/content/help.jsp" />
 	</definition>
 	
+	<definition name="register" extends="welcome">
+		<put-attribute name="content" value="/WEB-INF/apacheTiles/security/register.jsp" />
+	</definition>
+	
+	<definition name="login" extends="welcome">
+		<put-attribute name="content" value="/WEB-INF/apacheTiles/security/login.jsp" />
+	</definition>
+	
+	<definition name="accessDenied" extends="welcome">
+		<put-attribute name="content" value="/WEB-INF/apacheTiles/security/accessDenied.jsp" />
+	</definition>
+	
 </tiles-definitions>

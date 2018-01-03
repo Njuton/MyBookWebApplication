@@ -17,7 +17,7 @@
 		<link rel="stylesheet" href="<c:url value="/resources/css/menu.css" />" type="text/css">
 
 		<!-- стили для всего проекта -->
-		<link rel="stylesheet" href="<c:url value="/resources/css/new-style.css" />" type="text/css">
+		<link rel="stylesheet" href="<c:url value="/resources/css/custom-style.css" />" type="text/css">
 
 		<!-- шрифт текста в пунктах меню -->
 		<link href="https://fonts.googleapis.com/css?family=Cuprum" rel="stylesheet">

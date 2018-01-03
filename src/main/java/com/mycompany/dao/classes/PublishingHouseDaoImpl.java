@@ -8,7 +8,7 @@ import com.mycompany.dao.interfaces.PublishingHouseDao;
 import com.mycompany.db.entity.PublishingHouse;
 
 /**
- * Реализация Dao-интерфейса {@link com.mycompany.dao.interfaces#PublishingHouseDao}
+ * Реализация Dao-интерфейса {@link com.mycompany.dao.interfaces.PublishingHouseDao}
  */
 @Repository
 @Transactional(propagation=Propagation.REQUIRED, readOnly=true)

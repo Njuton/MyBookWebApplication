@@ -86,7 +86,7 @@
 	
 	
 	<target name="all"
-			depends="dropSqlServerTables,
+			depends="dropSqlServerTables, dropHyperSQLTables,
 					 createSqlServerTables, createHyperSQLTables,
 					 populateSqlServerTables, populateHyperSQLTables" 
 			description="Запуск всех целей" />

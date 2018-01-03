@@ -673,3 +673,67 @@
 	.welcome_li li{
 		margin: 10px;
 	}
+	
+	/* Spring Security Style */
+	
+	/*header*/
+	
+	.header_div_authenticated {
+		float: right; 
+		margin-right: 20px; 
+		margin-top: 2px; 
+		text-align: center; 
+		font-size: 12pt;
+	}
+	
+	.header_div_anonymous{
+	  	float: right; 
+	  	margin-right: 50px; 
+	  	margin-top: 20px;
+	}
+	
+	/*login*/
+	
+	.login .col1{
+		width: 50%;
+	}
+	
+	.login .col2{
+		width: 50%;
+	}
+	
+	.login input {
+		width: 100%;
+	}
+	
+	.login{
+		background-color: #FCF7EB;
+		width: 40%; 
+		border: 1px solid black; 
+		margin-top: 100px;
+	}
+	
+	/* register */
+	
+	.register{
+		background-color: #FCF7EB;
+		width: 80%; 
+		border: 1px solid black; 
+		margin-top: 100px;
+	}
+	
+	.register button, .register input {
+		width: 100%;
+	}
+	
+	.register .col1{
+		width: 35%;
+	}
+	
+	.register .col2{
+		width: 32%;
+	}
+	
+	.register .col3{
+		width: 32%;
+	}

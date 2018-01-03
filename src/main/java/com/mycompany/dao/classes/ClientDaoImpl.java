@@ -11,7 +11,7 @@ import com.mycompany.dao.interfaces.ClientDao;
 import com.mycompany.db.entity.Client;
 
 /**
- * Реализация Dao-интерфейса {@link com.mycompany.dao.interfaces#ClientDao}
+ * Реализация Dao-интерфейса {@link com.mycompany.dao.interfaces.ClientDao}
  */
 @Repository
 @Transactional(propagation=Propagation.REQUIRED, readOnly=true)

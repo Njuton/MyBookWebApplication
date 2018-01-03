@@ -26,8 +26,35 @@
 		<button type="submit" class="head_find_button">Найти</button>
 	</div>
 	
-	<div style="float: left;">
+	<%-- Если пользователь аутентифицирован --%>
+	
+	<security:authorize access="isAuthenticated()">
+		<security:authentication property="principal.username" var="username" />
+		<div class="header_div_authenticated"> 
+			Здравствуйте, </br> 
+			<span style="color: red; font-weight: bold;">${username}</span> </br>
+			
+			<security:authentication property="principal.authorities" var="authorities" />
+			<c:forEach items="${authorities}" var="authority" varStatus="vs">
+				${authority}
+			</c:forEach> </br>
+			<a href="<c:url value="/logout" />">Выйти</a>
+			
+		</div>
+	</security:authorize>
+	
+	<%-- Если пользователь не аутентифицирован --%>
+	
+	<security:authorize access="isAnonymous()">
+		<div class="header_div_anonymous">
+			<a href="<c:url value="/login" />" />Вход</a> </br>
+			<a href="<c:url value="/register" />" />Регистрация</a> </br>
+		</div>
+	</security:authorize>
+	
+	<div style="float: left; margin-left: 360px;">
 		<span class="err"><form:errors /></span>
 	</div>
+	
 	
 </form:form>

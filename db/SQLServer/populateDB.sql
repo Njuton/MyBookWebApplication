@@ -1,3 +1,15 @@
+insert into [groups] (group_name) VALUES('USER')
+insert into [groups] (group_name) VALUES('ADMIN')
+
+insert into [group_authorities] (authority, group_id) VALUES ('ROLE_USER', 1)
+insert into [group_authorities] (authority, group_id) VALUES ('ROLE_ADMIN', 2)
+
+insert into [group_members] (username, group_id) VALUES ('user', 1)
+insert into [group_members] (username, group_id) VALUES ('admin', 2)
+
+insert into [users] (username, enabled, password) VALUES ('user', 1, 'user')
+insert into [users] (username, enabled, password) VALUES ('admin', 1, 'admin')
+
 insert into [Author] (first_name, last_name) VALUES ('Дэн', 'Браун')
 insert into [Author] (first_name, last_name) VALUES ('Артур', 'Конан Дойл')
 insert into [Author] (first_name, last_name) VALUES ('Александр', 'Дюма')

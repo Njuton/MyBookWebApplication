@@ -8,7 +8,7 @@ import com.mycompany.dao.interfaces.CityDao;
 import com.mycompany.db.entity.City;
 
 /**
- * Реализация Dao-интерфейса {@link com.mycompany.dao.interfaces#CityDao}
+ * Реализация Dao-интерфейса {@link com.mycompany.dao.interfaces.CityDao}
  */
 @Repository
 @Transactional(propagation=Propagation.REQUIRED, readOnly=true)

@@ -65,8 +65,6 @@ public class MenuController {
 			 * (redirect на страницу откуда пришли)
 			 */
 			
-			System.out.println("контекст: " + request.getContextPath());
-			
 			Pattern pattern = Pattern.compile("http://localhost:8080" + request.getContextPath() + "((\\w|\\W)*)");
 			Matcher matcher = pattern.matcher(request.getHeader("referer"));
 			matcher.find();

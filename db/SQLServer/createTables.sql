@@ -67,6 +67,29 @@ create table PublishingHouse
  name nvarchar(255), 
  primary key (id))
  
+create table group_authorities 
+(id bigint identity not null, 
+ authority nvarchar(50), 
+ group_id bigint, 
+ primary key (id))
+
+create table group_members 
+(id bigint identity not null, 
+ username nvarchar(50) not null, 
+ group_id bigint, 
+ primary key (id))
+
+ create table groups 
+(id bigint identity not null, 
+ group_name nvarchar(50) not null, 
+ primary key (id))
+
+create table users 
+(username nvarchar(50) not null,
+ enabled bit not null, 
+ password nvarchar(50), 
+ primary key (username))
+ 
 alter table [Order] 
 add constraint FK_CITY_ORDER foreign key (city_id) references City
 
@@ -93,3 +116,9 @@ add constraint FK_COUNTRY_CITY foreign key (country_id) references Country
 
 alter table Client 
 add constraint FK_CITY_CLIENT foreign key (city_id) references City
+
+alter table group_authorities 
+add constraint GROUP_GROUP_AUTHORITIES foreign key (group_id) references groups
+
+alter table group_members 
+add constraint GROUP_GROUP_MEMBERS foreign key (group_id) references groups

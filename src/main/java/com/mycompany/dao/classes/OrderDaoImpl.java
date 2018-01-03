@@ -7,7 +7,7 @@ import com.mycompany.db.entity.Book;
 import com.mycompany.db.entity.Order;
 
 /**
- * Реализация Dao-интерфейса {@link com.mycompany.dao.interfaces#OrderDao}
+ * Реализация Dao-интерфейса {@link com.mycompany.dao.interfaces.OrderDao}
  */
 @Repository
 public class OrderDaoImpl extends PersistenceDao<Order, Integer> implements OrderDao{

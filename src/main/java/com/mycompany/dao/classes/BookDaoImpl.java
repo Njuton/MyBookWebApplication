@@ -17,7 +17,7 @@ import com.mycompany.db.enumClasses.Genre;
 import com.mycompany.db.enumClasses.PaperType;
 
 /**
- * Реализация Dao-интерфейса {@link com.mycompany.dao.interfaces#BookDao}
+ * Реализация Dao-интерфейса {@link com.mycompany.dao.interfaces.BookDao}
  */
 @Repository
 @Transactional(propagation=Propagation.REQUIRED, readOnly=true)

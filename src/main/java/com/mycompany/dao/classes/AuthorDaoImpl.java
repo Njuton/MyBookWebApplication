@@ -12,7 +12,7 @@ import com.mycompany.dao.interfaces.AuthorDao;
 import com.mycompany.db.entity.Author;
 
 /**
- * Реализация Dao-интерфейса {@link com.mycompany.dao.interfaces#AuthorDao}
+ * Реализация Dao-интерфейса {@link com.mycompany.dao.interfaces.AuthorDao}
  */
 @Repository
 @Transactional(propagation=Propagation.REQUIRED, readOnly=true)
